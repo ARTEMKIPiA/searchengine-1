@@ -1,0 +1,40 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    username: root
+    password: root
+    url:
+      jdbc:mysql://localhost:3306/search_engine?useSSL=false&requir
+      eSSL=false&allowPublicKeyRetrieval=true
+  jpa:
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  security:
+    user:
+      name: user
+      password: user
+      roles: USER
+# example values
+
+indexing-settings:
+  sites:
+    - url: https://www.playback.ru
+      name: PlayBack.Ru
+    - url: https://nikoartgallery.com/
+      name: nikoartgallery.com
+    - url: https://et-cetera.ru/mobile/
+      name: et-cetera.ru
+
+  name: SearchBotFix/2.0
+  referer: https://google.com
+  timeout: 15000
+  contentType: text/html; charset=utf-8
+
+search-settings:
+  limit: 20
+  offset: 0
